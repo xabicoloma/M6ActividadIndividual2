@@ -1,0 +1,49 @@
+{% extends 'home/base.html' %}
+{%block content%}
+    
+<div class="container mt-5">
+    <div class="row">
+        <div class="col-sm-4">
+        <h2>Tu Auto app</h2>
+        <h5>Nuestra Historia</h5>
+        <p>En un pequeño garaje, tres amigos apasionados por los autos y la tecnología tuvieron la idea de crear TuAutoApp, una aplicación para gestionar autos personales. Con trabajo duro y enfoque en la satisfacción del cliente, la app creció rápidamente y se convirtió en un éxito, mejorando la experiencia automovilística para miles de usuarios. Hoy en día, TuAutoApp es una empresa reconocida a nivel nacional e internacional, comprometida con la innovación continua.</p>
+        <ul class="nav nav-pills flex-column">
+            <div class="card text-center">
+                <div class="mt-1 p-2 bg-primary text-white rounded">
+                    <h1>Acceso Usuarios</h1>
+                </div>
+                <div class="row">
+                <form>
+                    <div class="mb-3">
+                    <label for="exampleInputEmail1" class="form-label">Email</label>
+                    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                    </div>
+                    <div class="mb-3">
+                    <label for="exampleInputPassword1" class="form-label">Contraseña</label>
+                    <input type="password" class="form-control" id="exampleInputPassword1">
+                    <div class="row">
+                    <a href="./contenido.html" class="btn btn-primary">Entrar</a>
+                    </div>
+                    <div class="row">
+                        <a href="./registro.html" class="btn btn-success">Crear cuenta nueva</a>
+                    </div>
+                </form>
+            </div>
+        </ul>
+        <hr class="d-sm-none">
+        </div>
+        <div class="col-sm-8">
+            {%for publicacion in publicaciones%}
+                <h2> {{publicacion.titulo}}</h2>
+                <h3> {{publicacion.autor}}</h3>
+                <p> {{publicacion.contenido}}</p>
+                <a> {{publicacion.fecha}}</a>
+            {% endfor%}
+        </div>
+    </div>
+</div>
+
+<div class="mt-5 p-4 bg-dark text-white text-center">
+<p>Footer</p>
+</div>
+{% endblock content%}
